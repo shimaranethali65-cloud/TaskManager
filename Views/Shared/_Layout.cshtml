@@ -40,19 +40,22 @@
     TaskManager
 </a>
                 <div>
-                    <a href="/Tasks" class="btn btn-outline-primary me-2">Login</a>
-                    <a href="/Tasks" class="btn btn-primary">Sign Up</a>
+                   @if (ViewData["Title"]?.ToString() != "Sign Up" 
+    && ViewData["Title"]?.ToString() != "Login")
+{
+    <a href="/Account/Login" class="btn btn-outline-primary me-2">Login</a>
+    <a href="/Account/Register" class="btn btn-primary">Sign Up</a>
+}
+
                 </div>
             </div>
         </nav>
     </header>
 
     <!-- 📄 Main Content -->
-    <div class="container mt-4">
-        <main role="main">
-            @RenderBody()
-        </main>
-    </div>
+    <main role="main">
+    @RenderBody()
+</main>
 
     <!-- 🔻 Footer -->
     <footer class="footer text-center text-muted">
