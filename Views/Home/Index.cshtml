@@ -1,0 +1,171 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<style>
+    body {
+        background: #f3f4f6;
+    }
+
+    /* HERO */
+    .hero {
+        background: linear-gradient(to right, #c7d2fe, #e9d5ff);
+        border-radius: 20px;
+        padding: 2px 15px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #1f2937;
+    }
+
+    .hero p {
+        font-size: 16px;
+        color: #555;
+    }
+
+    .hero img {
+        width: 230px;
+    }
+
+    .btn-custom {
+        padding: 10px 22px;
+        border-radius: 10px;
+    }
+
+    /* FEATURES */
+    .features {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .feature-card {
+        background: white;
+        border-radius: 18px;
+        padding: 20px;
+        transition: 0.3s;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-6px);
+    }
+
+    .feature-card h5 {
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .feature-card p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 0;
+    }
+
+    .icon {
+        font-size: 28px;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    /* CTA */
+    .cta {
+        margin-top: 50px;
+        background: linear-gradient(to right, #4f46e5, #9333ea);
+        border-radius: 20px;
+        padding: 50px 20px;
+        text-align: center;
+        color: white;
+    }
+
+    .cta h2 {
+        font-weight: 700;
+    }
+
+    .cta .btn {
+        margin-top: 20px;
+        padding: 10px 24px;
+        border-radius: 10px;
+    }
+
+    /* FOOTER */
+    .footer-text {
+        text-align: center;
+        margin-top: 15px;
+        color: #777;
+        font-size: 14px;
+    }
+</style>
+
+<div class="container mt-5">
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="row align-items-center">
+
+            <!-- LEFT -->
+            <div class="col-md-7">
+                <h1>Organize Your Tasks Efficiently</h1>
+
+                <p class="mt-3">
+                    A simple and powerful task manager built with ASP.NET Core
+                </p>
+
+                <div class="mt-4">
+                    <a href="/Tasks" class="btn btn-primary btn-custom me-2">Get Started</a>
+                    <a href="/Tasks" class="btn btn-outline-secondary btn-custom">Login</a>
+                </div>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="col-md-5 text-center">
+                <img src="~/images/hero.png" />
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="features">
+
+        <h2 class="fw-bold mb-4">Features</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="feature-card shadow-sm">
+                    <span class="icon">📋</span>
+                    <h5>Manage Tasks</h5>
+                    <p>Create, update, and organize your tasks</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card shadow-sm">
+                    <span class="icon">⏰</span>
+                    <h5>Set Deadlines</h5>
+                    <p>Stay on track with due dates</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card shadow-sm">
+                    <span class="icon">📊</span>
+                    <h5>Track Progress</h5>
+                    <p>Monitor your task completion</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+        <h2>Start Managing Your Tasks Today 🚀</h2>
+        <a href="/Tasks" class="btn btn-light">Create Account</a>
+    </div>
+
+    
+
+</div>
