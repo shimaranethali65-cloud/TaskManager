@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TaskManagerApp.Data;
 using TaskManagerApp.Models;
+using System.Linq;
 
 namespace TaskManagerApp.Controllers
 {
@@ -13,29 +14,50 @@ namespace TaskManagerApp.Controllers
             _context = context;
         }
 
-        // GET: /Account/Register
+        // GET: Register
         public IActionResult Register()
         {
             return View();
         }
 
-        // POST: /Account/Register
+        // POST: Register
         [HttpPost]
-        public IActionResult Register(User user, string ConfirmPassword)
+        public IActionResult Register(string name, string email, string password)
         {
-            // Check if passwords match
-            if (user.Password != ConfirmPassword)
+            var user = new User
             {
-                ViewBag.Error = "Passwords do not match";
-                return View(user);
-            }
+                FullName = name,
+                Email = email,
+                Password = password
+            };
 
-            // Save user to database
             _context.Users.Add(user);
             _context.SaveChanges();
 
-            // Redirect after success
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login");
+        }
+
+        // GET: Login
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        // POST: Login
+        [HttpPost]
+        public IActionResult Login(string email, string password)
+        {
+            var user = _context.Users
+                .FirstOrDefault(u => u.Email == email && u.Password == password);
+
+            if (user != null)
+            {
+                // success
+                return RedirectToAction("Index", "Home");
+            }
+
+            ViewBag.Error = "Invalid email or password";
+            return View();
         }
     }
 }

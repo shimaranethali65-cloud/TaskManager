@@ -1,0 +1,62 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div style="position: relative; height: 100vh; overflow: hidden;">
+
+    <!-- Background -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('/images/hero.png') no-repeat center center;
+        background-size: cover;
+        filter: blur(8px);
+        transform: scale(1.1);
+        z-index: 0;
+    "></div>
+
+    <!-- Overlay -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.2);
+        z-index: 1;
+    "></div>
+
+    <!-- Centered Content -->
+    <div class="d-flex justify-content-center align-items-center"
+         style="height: 100%; position: relative; z-index: 2;">
+
+        <div class="card p-4 shadow"
+     style="
+        width: 350px;
+        border-radius: 15px;
+        background: #ffffff;
+        border: none;
+     ">
+
+            <h3 class="text-center mb-3 text-dark">Welcome Back</h3>
+            <p class="text-center text-dark">Please login to your account</p>
+
+            <form method="post">
+                <input type="email" name="email" class="form-control mb-3" placeholder="Email" required />
+                <input type="password" name="password" class="form-control mb-3" placeholder="Enter your password" required />
+
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+
+                <div class="text-center mt-3">
+                    <small>Don't have an account? <a href="/Account/Register">Sign Up</a></small>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
