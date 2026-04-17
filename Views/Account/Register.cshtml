@@ -1,0 +1,132 @@
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<style>
+    body {
+        background: #f3f4f6;
+    }
+
+    .signup-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px; 
+}
+
+    .signup-box {
+    display: flex;
+    width: 80%;
+    max-width: 900px; 
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+    /* LEFT IMAGE */
+    .signup-left {
+        flex: 1;
+        background: linear-gradient(to bottom right, #c7d2fe, #e9d5ff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .signup-left img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* RIGHT FORM */
+    .signup-right {
+        flex: 1;
+        padding: 50px 40px;
+    }
+
+    .signup-right h3 {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .btn-custom {
+        background: linear-gradient(to right, #2563eb, #7c3aed);
+        color: white;
+        border-radius: 10px;
+        padding: 10px;
+        width: 100%;
+        border: none;
+    }
+
+    .btn-custom:hover {
+        opacity: 0.9;
+    }
+
+    .login-link {
+        font-size: 0.9rem;
+    }
+
+    @@media (max-width: 768px) {
+        .signup-box {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .signup-left {
+            display: none;
+        }
+    }
+</style>
+
+<div class="signup-container">
+    <div class="signup-box">
+
+        <!-- LEFT -->
+        <div class="signup-left">
+            <img src="~/images/hero.png" alt="signup image" />
+        </div>
+
+        <!-- RIGHT -->
+        <div class="signup-right">
+
+            <h3>Create an Account</h3>
+            <p class="text-muted">Please fill in the form to create an account</p>
+
+<form method="post">
+
+    <div class="mb-3">
+        <input type="text" name="FullName" class="form-control" placeholder="Full Name" />
+    </div>
+
+    <div class="mb-3">
+        <input type="email" name="Email" class="form-control" placeholder="Email Address" />
+    </div>
+
+    <div class="mb-3">
+        <input type="password" name="Password" class="form-control" placeholder="Create a password" />
+    </div>
+
+    <div class="mb-4">
+        <input type="password" name="ConfirmPassword" class="form-control" placeholder="Confirm password" />
+    </div>
+
+    <div class="mt-2">
+        <button type="submit" class="btn btn-custom w-100">Sign Up</button>
+    </div>
+
+</form>
+            <p class="mt-3 login-link">
+                Already have an account?
+                <a href="/Account/Login">Login</a>
+            </p>
+
+        </div>
+
+    </div>
+</div>

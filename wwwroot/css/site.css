@@ -29,3 +29,20 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+.register-page {
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    background-color: #f5f6fa; 
+    padding: 20px; 
+}
+
+.register-card {
+    width: 100%;
+    max-width: 1000px; 
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 30px;
+}
